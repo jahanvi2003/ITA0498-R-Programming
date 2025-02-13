@@ -1,0 +1,8 @@
+letters_vector <- letters  
+letters_vector_upper <- LETTERS
+first_10_lowercase <- letters_vector[1:10]
+last_10_uppercase <- letters_vector_upper[17:26]
+letters_22_to_24_uppercase <- LETTERS[22:24]
+cat("First 10 lowercase letters:", first_10_lowercase, "\n")
+cat("Last 10 uppercase letters:", last_10_uppercase, "\n")
+cat("Letters between 22nd and 24th in uppercase:", letters_22_to_24_uppercase, "\n")
