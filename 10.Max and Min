@@ -1,0 +1,6 @@
+sample_vector <- c(12, 45, 7, 89, 23, -5, 67, 34)
+max_value <- max(sample_vector)
+min_value <- min(sample_vector)
+cat("Given vector:", sample_vector, "\n")
+cat("Maximum value:", max_value, "\n")
+cat("Minimum value:", min_value, "\n")
