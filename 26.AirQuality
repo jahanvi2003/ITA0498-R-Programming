@@ -1,0 +1,8 @@
+data("airquality")
+print(paste("Is airquality a data frame? ", class(airquality)))
+ordered_data <- airquality[order(airquality$Ozone, airquality$Solar.R),]
+print("Ordered data frame:")
+print(head(ordered_data, 10)) # Display the first 10 rows
+modified_data <- ordered_data[, c("Ozone", "Temp", "Month", "Day")]
+print("Modified data frame after removing 'Solar.R' and 'Wind':")
+print(head(modified_data, 10)) # Display the first 10 rows
