@@ -1,0 +1,15 @@
+array1 <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, byrow = TRUE)
+array2 <- matrix(c(10, 11, 12, 13, 14, 15, 16, 17, 18), nrow = 3, byrow = TRUE)
+array3 <- matrix(c(19, 20, 21, 22, 23, 24, 25, 26, 27), nrow = 3, byrow = TRUE)
+print("Array 1:")
+print(array1)
+print("Array 2:")
+print(array2)
+print("Array 3:")
+print(array3)
+row1_array1 <- array1[1, ]
+row1_array2 <- array2[1, ]
+row1_array3 <- array3[1, ]
+combined_row <- c(row1_array1, row1_array2, row1_array3)
+print("Combined First Row:")
+print(combined_row)
