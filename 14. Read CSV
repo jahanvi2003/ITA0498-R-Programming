@@ -1,0 +1,5 @@
+file_path <- "path/to/your/file.csv"  
+data <- read.csv(file_path)
+print(data)
+data <- read.csv(file.choose())
+print(data)
