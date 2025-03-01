@@ -1,0 +1,8 @@
+set.seed(123)
+random_sample <- sample(LETTERS, size = 5, replace = FALSE)
+factor_sample <- factor(random_sample)
+print("Factor created from the random sample:")
+print(factor_sample)
+levels_factor <- levels(factor_sample)
+print("Levels of the factor:")
+print(levels_factor)
