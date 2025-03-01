@@ -1,0 +1,10 @@
+data_vector <- 1:24 
+dimensions <- c(2, 3, 4) 
+dimension_names <- list(
+  Rows = c("Row1", "Row2"),
+  Columns = c("Col1", "Col2", "Col3"),
+  Layers = c("Layer1", "Layer2", "Layer3", "Layer4")
+)
+my_array <- array(data_vector, dim = dimensions, dimnames = dimension_names)
+print(my_array)
+cat("Element at Row1, Col2, Layer3:", my_array["Row1", "Col2", "Layer3"], "\n")
