@@ -1,0 +1,8 @@
+data("women")
+print("Women data set of height and weights:")
+print(women)
+height_factor <- cut(women$height, breaks = 3)
+print("Factor corresponding to height:")
+print(height_factor)
+print("Frequency table of the height factor:")
+print(table(height_factor))
