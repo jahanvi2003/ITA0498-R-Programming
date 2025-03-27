@@ -1,0 +1,27 @@
+```
+install.packages("datasets")
+install.packages("ggplot2")
+library(datasets)
+library(ggplot2)
+
+data(Titanic)
+
+barplot(Titanic$Survived ~ Titanic$Class, 
+        main = "Survival by Class", 
+        xlab = "Class", 
+        ylab = "Survived", 
+        col = "skyblue")
+
+barplot(Titanic$Survived ~ Titanic$Sex + Titanic$Class, 
+        main = "Survival by Sex and Class", 
+        xlab = "Sex and Class", 
+        ylab = "Survived", 
+        col = "skyblue")
+
+hist(Titanic$Age, 
+     main = "Distribution of Age", 
+     xlab = "Age", 
+     ylab = "Frequency", 
+     col = "skyblue", 
+     border = "black")
+```
