@@ -1,0 +1,11 @@
+```
+Pie Chart
+pie(c(25, 30, 20, 25), 
+    labels = c("A", "B", "C", "D"), 
+    main = "Pie Chart")
+
+Bar Chart
+barplot(c(25, 30, 20, 25), 
+         names.arg = c("A", "B", "C", "D"), 
+         main = "Bar Chart")
+```
