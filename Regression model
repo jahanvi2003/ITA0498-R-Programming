@@ -1,0 +1,31 @@
+```
+Load the datasets library
+library(datasets)
+
+Load the mtcars dataset
+data(mtcars)
+
+Fit the linear regression model
+model <- lm(mpg ~ wt, data = mtcars)
+
+Summarize the model
+summary(model)
+
+Predict the response variable
+predictions <- predict(model, mtcars)
+
+Plot the data and the regression line
+plot(mtcars$wt, mtcars$mpg)
+abline(model)
+
+Check for assumptions of linear regression
+Linearity
+plot(mtcars$wt, residuals(model))
+
+Homoscedasticity
+plot(predict(model, mtcars), residuals(model))
+
+Normality
+hist(residuals(model))
+qqnorm(residuals(model))
+```
