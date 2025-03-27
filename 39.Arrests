@@ -1,0 +1,38 @@
+```
+library(datasets)
+data("USArrests")
+
+summary(USArrests)
+str(USArrests)
+sapply(USArrests, class)
+dim(USArrests)
+nrow(USArrests)
+ncol(USArrests)
+
+max_rape_state <- rownames(USArrests)[which.max(USArrests$Rape)]
+max_murder_state <- rownames(USArrests)[which.max(USArrests$Murder)]
+min_murder_state <- rownames(USArrests)[which.min(USArrests$Murder)]
+
+cor(USArrests)
+
+median_assault <- median(USArrests$Assault)
+high_assault_states <- rownames(USArrests)[USArrests$Assault > median_assault]
+
+quantile_murder <- quantile(USArrests$Murder, 0.25)
+low_murder_states <- rownames(USArrests)[USArrests$Murder < quantile_murder]
+
+hist(USArrests$Murder, main = "Histogram of Murder Arrests", xlab = "Murder Arrests")
+plot(density(USArrests$Murder), main = "Density Plot of Murder Arrests", xlab = "Murder Arrests")
+
+library(ggplot2)
+ggplot(USArrests, aes(x = UrbanPop, y = Murder)) + 
+  geom_point(aes(color = Assault)) + 
+  scale_color_gradient(low = "blue", high = "red") + 
+  labs(title = "Relationship between Murder Arrest Rate and Urban Population", 
+       subtitle = "Assault Arrest Rate represented by color", 
+       x = "Urban Population", 
+       y = "Murder Arrest Rate", 
+       color = "Assault Arrest Rate")
+
+barplot(USArrests$Murder, main = "Murder Rate by State", xlab = "State", ylab = "Murder Rate")
+```
