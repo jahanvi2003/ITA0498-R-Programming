@@ -1,0 +1,13 @@
+i <- colMeans(is.na(airquality))
+for (col in names(airquality)) {
+if (colMeans(is.na(airquality[col])) < 0.1) {
+airquality <- airquality[!is.na(airquality[,col]),]
+} else {
+airquality[is.na(airquality[,col]), col] <- mean(airquality[,col], na.rm = TRUE)
+}
+}
+
+ii <- lm(Ozone ~ Solar.R, data = airquality)
+
+iii <- plot(airquality$Solar.R, airquality$Ozone)
+abline(ii, col = "red")
