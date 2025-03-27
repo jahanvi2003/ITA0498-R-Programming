@@ -1,0 +1,48 @@
+```
+Create a dataset
+data <- data.frame(
+  Name = c("John", "Mary", "David", "Emily", "James"),
+  Age = c(25, 31, 42, 28, 35),
+  Score = c(85, 90, 78, 92, 88)
+)
+
+View the dataset
+view(data)
+
+Statistical analysis
+summary(data)
+
+Mean
+mean_age <- mean(data$Age)
+mean_score <- mean(data$Score)
+print(paste("Mean Age:", mean_age))
+print(paste("Mean Score:", mean_score))
+
+Median
+median_age <- median(data$Age)
+median_score <- median(data$Score)
+print(paste("Median Age:", median_age))
+print(paste("Median Score:", median_score))
+
+Mode
+mode_age <- names(which.max(table(data$Age)))
+mode_score <- names(which.max(table(data$Score)))
+print(paste("Mode Age:", mode_age))
+print(paste("Mode Score:", mode_score))
+
+Standard Deviation
+sd_age <- sd(data$Age)
+sd_score <- sd(data$Score)
+print(paste("Standard Deviation Age:", sd_age))
+print(paste("Standard Deviation Score:", sd_score))
+
+Variance
+var_age <- var(data$Age)
+var_score <- var(data$Score)
+print(paste("Variance Age:", var_age))
+print(paste("Variance Score:", var_score))
+
+Correlation
+correlation <- cor(data$Age, data$Score)
+print(paste("Correlation between Age and Score:", correlation))
+```
