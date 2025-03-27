@@ -1,0 +1,43 @@
+
+
+Example 1: Simple Function
+```
+Define a function to add two numbers
+add_numbers <- function(x, y) {
+  result <- x + y
+  return(result)
+}
+
+Call the function
+result <- add_numbers(5, 10)
+print(result)  # Output: 15
+```
+
+Example 2: Function with Default Argument
+```
+Define a function to greet someone
+greet <- function(name = "World") {
+  message <- paste("Hello, ", name, "!")
+  return(message)
+}
+
+Call the function with default argument
+print(greet())  # Output: "Hello, World!"
+
+Call the function with custom argument
+print(greet("John"))  # Output: "Hello, John!"
+```
+
+Example 3: Function with Multiple Return Values
+```
+Define a function to calculate mean and median
+calculate_stats <- function(x) {
+  mean_value <- mean(x)
+  median_value <- median(x)
+  return(list(mean = mean_value, median = median_value))
+}
+
+Call the function
+stats <- calculate_stats(c(1, 2, 3, 4, 5))
+print(stats)  # Output: $mean [1] 3 $median [1] 3
+```
