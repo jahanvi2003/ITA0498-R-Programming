@@ -1,0 +1,18 @@
+```
+Load the data
+data(ChickWeight)
+
+Fit the multiple regression model
+model <- lm(weight ~ Time + Diet, data = ChickWeight)
+
+Summarize the model
+summary(model)
+
+Predict weight for Time = 10 and Diet = 1
+predicted_weight <- predict(model, newdata = data.frame(Time = 10, Diet = 1))
+print(predicted_weight)
+
+Find the error in the model
+residuals <- residuals(model)
+print(residuals)
+```
