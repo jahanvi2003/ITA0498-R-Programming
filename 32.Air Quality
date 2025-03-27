@@ -1,0 +1,9 @@
+i <- sum(airquality$Temp, na.rm=TRUE) / sum(!is.na(airquality$Temp))
+
+ii <- airquality[1:5,]
+
+iii <- airquality[,!(names(airquality) %in% c("Temp", "Wind"))]
+
+iv <- airquality[which.min(airquality$Temp),]
+
+v <- sum(airquality$Wind > 17, na.rm=TRUE)
