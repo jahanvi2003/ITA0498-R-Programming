@@ -1,0 +1,5 @@
+i <- tail(ChickWeight[order(ChickWeight$weight, ChickWeight$Diet),], 6)
+
+ii_a <- melt(ChickWeight, id.vars = c("Chick", "Time", "Diet"))
+ii_b <- dcast(ChickWeight, Diet ~ ., mean, value.var = "weight")
+ii_c <- dcast(ChickWeight, Diet ~ ., getmode, value.var = "weight")
