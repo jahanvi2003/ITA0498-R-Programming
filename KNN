@@ -1,0 +1,25 @@
+```
+Load necessary libraries
+library(class)
+library(caret)
+
+Load iris dataset
+data(iris)
+
+Split dataset into training and testing sets
+set.seed(123)
+trainIndex <- createDataPartition(iris$Species, p = .7, list = FALSE)
+irisTrain <- iris[trainIndex, ]
+irisTest <- iris[-trainIndex, ]
+
+Build KNN classification model
+knnModel <- knn(train = irisTrain[, 1:4], test = irisTest[, 1:4], cl = irisTrain$Species, k = 3)
+
+Evaluate model performance
+confusionMatrix(factor(knnModel), factor(irisTest$Species))
+
+Make predictions on new data
+newData <- data.frame(Sepal.Length = 5.1, Sepal.Width = 3.5, Petal.Length = 1.4, Petal.Width = 0.2)
+prediction <- knn(train = irisTrain[, 1:4], test = newData, cl = irisTrain$Species, k = 3)
+print(prediction)
+```
