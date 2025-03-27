@@ -1,0 +1,16 @@
+```
+Load iris dataset
+data(iris)
+
+Select features for clustering
+features <- iris[, 1:4]
+
+Build K-means clustering model
+kmeans_model <- kmeans(features, centers = 3)
+
+Print cluster assignments
+print(kmeans_model$cluster)
+
+Print cluster centers
+print(kmeans_model$centers)
+```
