@@ -1,0 +1,49 @@
+# (i) Dimension, Structure, Summary statistics, Standard Deviation
+dimension <- dim(iris)
+structure <- str(iris)
+summary_stats <- summary(iris)
+std_dev <- sapply(iris[1:4], sd)
+
+# (ii) Mean and SD by Species
+library(dplyr)
+iris_grouped <- iris %>%
+  group_by(Species) %>%
+  summarise(across(1:4, list(mean = mean, sd = sd)))
+
+# (iii) Quantile values
+sepal_width_quantile <- quantile(iris$Sepal.Width, probs = c(0.25, 0.5, 0.75))
+sepal_length_quantile <- quantile(iris$Sepal.Length, probs = c(0.25, 0.5, 0.75))
+
+# (iv) Create iris1 with Sepal.Length.Cate
+iris1 <- iris %>%
+  mutate(Sepal.Length.Cate = cut(Sepal.Length,
+                               breaks = quantile(Sepal.Length),
+                               labels = c("Q1", "Q2", "Q3", "Q4"),
+                               include.lowest = TRUE))
+
+# (v) Average values by Species and Category
+avg_values <- iris1 %>%
+  group_by(Species, Sepal.Length.Cate) %>%
+  summarise(across(1:4, mean), .groups = 'drop')
+
+# (vi) Average mean values
+avg_mean_values <- avg_values %>%
+  summarise(across(3:6, mean))
+
+# (vii) Pivot Table
+library(reshape2)
+pivot_table <- dcast(melt(iris1, id.vars = c("Species", "Sepal.Length.Cate")),
+                    Species + Sepal.Length.Cate ~ variable,
+                    fun.aggregate = mean)
+
+# Display results
+list(dimension = dimension,
+     structure = structure,
+     summary_stats = summary_stats,
+     std_dev = std_dev,
+     grouped_stats = iris_grouped,
+     sepal_quantiles = list(Sepal.Width = sepal_width_quantile,
+                            Sepal.Length = sepal_length_quantile),
+     avg_values = avg_values,
+     avg_mean_values = avg_mean_values,
+     pivot_table = pivot_table)
