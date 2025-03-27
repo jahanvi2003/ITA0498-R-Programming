@@ -1,0 +1,13 @@
+```
+Create a dataset
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+
+Calculate Covariance
+covariance <- cov(x, y)
+print(paste("Covariance: ", covariance))
+
+Calculate Correlation
+correlation <- cor(x, y)
+print(paste("Correlation: ", correlation))
+```
