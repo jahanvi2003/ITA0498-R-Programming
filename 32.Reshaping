@@ -1,0 +1,9 @@
+i <- summary(airquality)
+
+ii <- melt(airquality)
+
+iii <- melt(airquality, id.vars=c("Month", "Day"))
+
+iv <- dcast(melt(airquality, id.vars=c("Month", "Day")), Month + Day ~ variable)
+
+v <- dcast(melt(airquality, id.vars=c("Month")), Month ~ variable, mean, na.rm=TRUE)
