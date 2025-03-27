@@ -1,0 +1,22 @@
+set.seed(123)
+
+# Randomly sample the iris dataset
+sample_indices <- sample(1:nrow(iris), size = 0.8 * nrow(iris))
+train_data <- iris[sample_indices, ]
+test_data <- iris[-sample_indices, ]
+
+# Create logistic regression model
+logistic_model <- glm(Species ~ Petal.Length + Petal.Width, data = train_data, family = "binomial")
+
+# Predict probabilities on test data
+predicted_probabilities <- predict(logistic_model, newdata = test_data, type = "response")
+
+# Convert probabilities to class labels
+predicted_classes <- ifelse(predicted_probabilities > 0.5, "versicolor", "setosa")
+predicted_classes <- factor(predicted_classes, levels = levels(iris$Species))
+
+# Create confusion matrix
+confusion_matrix <- table(Predicted = predicted_classes, Actual = test_data$Species)
+
+# Display confusion matrix
+print(confusion_matrix)
