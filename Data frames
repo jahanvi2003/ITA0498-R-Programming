@@ -1,0 +1,31 @@
+Here's an example implementation of data frames in R:
+
+```
+Create a data frame
+df <- data.frame(
+  Name = c("John", "Mary", "David"),
+  Age = c(25, 31, 42),
+  Score = c(85, 90, 78)
+)
+
+Print the data frame
+print(df)
+
+Access a column
+print(df$Name)
+
+Access a row
+print(df[1, ])
+
+Add a new column
+df$Grade <- c("A", "A", "B")
+print(df)
+
+Remove a column
+df$Age <- NULL
+print(df)
+
+Remove a row
+df <- df[-1, ]
+print(df)
+```
