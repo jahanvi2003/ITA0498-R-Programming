@@ -1,0 +1,35 @@
+
+Create a string
+str <- "Hello World"
+
+Convert to uppercase
+print(toupper(str))
+
+Convert to lowercase
+print(tolower(str))
+
+Split the string
+print(strsplit(str, " "))
+
+Paste the string
+print(paste("Hello", "World"))
+
+Trim the string
+print(trimws(str))
+
+Replace a substring
+print(gsub("World", "Universe", str))
+
+Extract a substring
+print(substr(str, 1, 5))
+
+Find the length of the string
+print(nchar(str))
+
+Check if the string is empty
+print(nzchar(str))
+
+Convert to title case
+print(toupper(substr(str, 1, 1))) 
+print(tolower(substr(str, 2, nchar(str))))
+```
